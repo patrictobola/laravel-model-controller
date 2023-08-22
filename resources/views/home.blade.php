@@ -14,16 +14,21 @@
 
 <body>
     <main>
-        <div class="container">
-            <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                    <a href="#" class="card-link">Card link</a>
-                    <a href="#" class="card-link">Another link</a>
-                </div>
+        <div class="container flex mt-5">
+            <div class="row">
+                @foreach ($movies as $movie)
+                    <div class="col-3 mb-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ $movie->title }}</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">{{ $movie->original_title }}</h6>
+                                <p class="card-text"><strong>Nationality:</strong> {{ $movie->nationality }}</p>
+                                <p class="card-text"><strong>Data di uscita:</strong> {{ $movie->date }}</p>
+                                <p class="card-text"><strong>Vote:</strong> {{ $movie->vote }}</p>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
             </div>
         </div>
     </main>
